@@ -1,0 +1,64 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+
+.title h2,
+.title h1{
+  font-size: 60px;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  padding: 50px 14px 30px;
+}
+.title .half {
+	border-top: solid 1.2px #E1E1E1 !important;
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/** Fix */
+.min-height-none {
+  min-height: 0;
+}
+.element-hidden {
+  display: none;
+}
+
+img.adaptive,
+img.image_front{
+  width: 100%;
+  height: auto;
+}
+
+#hero {
+  background: #eceeef;
+}
+.about-box {
+    padding: 25px 10px !important;
+    height: auto;
+    min-height: 214px;
+    margin: 10px 0px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    transition: all 1s;
+}
+
+.about-box .fa {
+  font-size: 44px;
+  margin-botto: 40xp;
+  padding:15px 0px;
+}
+#order {
+  background: #eceeef;
+}
+
+#contact {
+  page-botto:30px;
+}
