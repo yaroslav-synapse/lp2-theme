@@ -1,0 +1,69 @@
+{{ attach_library('adaptive/adaptive.usluga') }}
+  <section id="hero" class="gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <div class="jumbotron jumbotron-fluid">
+            <h1 class="display-3">{{ label }}</h1>
+            <p class="lead">{{ content.field_short }}</p>
+            <hr class="m-y-2">{{ content.field_usluga_sostav }}</p>
+            <p class="lead">
+              <a href="#order" class="scroll btn btn-primary btn-lg">
+              Отправьте заявку</a>
+           </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="about" class="padding-top-50">
+    <div class="container">
+      <div class="row">
+        {% for block in usluga.blocks %}
+        <div class="col-md-4 col-sm-4 text-xs-center text-center wow flipInY animated">
+          <div class="about-box">
+            <i class="fa fa-{{ block.icon }}" aria-hidden="true"></i>
+            <p><strong class="upper">{{ block.title }}</strong></p>
+            <p>{{ block.text }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <section id="main" class="padding-bottom-50 padding-top-50">
+    <div class="container">
+      <div id="main-content" class="row">
+        <div id="content-area" class="col-xs-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3" >
+          <article{{ attributes.addClass('node') }}>
+            {{ title_prefix }}
+            {{ title_suffix }}
+            <div class="content">
+              {{ content.body }}
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="line" class="gray padding-top-40">
+    <div class="container">
+      <div class="title text-center">
+        <h2>Остались вопросы?</h2>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12 text-center wow flipInY animated">
+          <div class="about-box">
+            <p class="lead ptb_10 wow fadeInDown">
+              Получите бесплатную консультацию у наших менеджеров</p><br>
+            <a href="#order" class="scroll btn btn-primary btn-lg">
+            Отправьте заявку</a>
+              или
+            <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#block-adaptive-form-callme">
+            Закажите звонок</button>
+            <br><br><br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

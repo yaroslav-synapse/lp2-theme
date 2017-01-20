@@ -1,0 +1,95 @@
+{{ attach_library('adaptive/adaptive.usluga') }}
+{{ attach_library('adaptive/adaptive.lp2') }}
+<section id="hero">
+    <div class="hero-inner custom-messages" style="background-image:url({{ main_image_url }})">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7">
+                    <div class="hero-inner__description">
+                        {{ label }}
+                        {{ content.field_short }}
+                        {{ content.field_usluga_sostav }}
+                    </div>
+                </div>
+                <div class="col-lg-4 offset-lg-1">
+                    {{ form_order.order1 }}
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="/#about" data-action="scroll" class="hero-arrow">
+        <i class="fa fa-angle-double-down" aria-hidden="true"></i>
+    </a>
+</section>
+<section id="about">
+    <div class="container">
+        <div class="row">
+          <div class="about-blocks">
+            {% for block in usluga.blocks %}
+                <div class="col-lg-4 col-md-6 text-xs-center text-center wow flipInY animated">
+                    <div class="about-box">
+                        <div class="about-box__icon">
+                            <i class="fa fa-{{ block.icon }}" aria-hidden="true"></i>
+                        </div>
+                        <div class="about-box__title">
+                            {{ block.title }}
+                        </div>
+                        <div class="about-box__description">
+                            {{ block.text }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+          </div>
+        </div>
+    </div>
+</section>
+<section id="services">
+    <div class="big-title">
+        Услуги
+    </div>
+    <div class="container">
+        <div id="main-content" class="row">
+            <div id="content-area" class="col-xs-12 col-lg-10 offset-lg-1">
+                <article{{ attributes.addClass('node-content-wrapper') }}>
+                    {{ title_prefix }}
+                    {{ title_suffix }}
+                    <div class="content">
+                        {{ content.body }}
+                        {{ content.field_attach }}
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="gallery">
+    <div class="big-title">
+        Галерея
+    </div>
+    <div class="container">
+        {{ content.field_gallery }}
+    </div>
+</section>
+<section id="line">
+    <div class="line__inner">
+        <div class="container">
+            <div class="line-title">
+                Остались вопросы?
+            </div>
+            <div class="wow flipInY animated">
+                <div class="line-subtitle">
+                    Получите бесплатную консультацию у наших менеджеров
+                </div>
+                <div class="line-buttons">
+                    <a href="/#hero" data-action="scroll" class="btn btn--big">
+                        <img src="/themes/adaptive/images/icon_request.svg" alt=""/>Отправьте заявку
+                    </a>
+                    <button type="button" class="btn btn--big" data-toggle="modal" data-target="#block-adaptive-form-callme">
+                        <img src="/themes/adaptive/images/icon_call.svg" alt=""/>Закажите звонок
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
