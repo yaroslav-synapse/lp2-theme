@@ -1,5 +1,5 @@
 name: Услуга
-description: 'Тип материала Услуга'
+description: 'Тип материала Услуга (ЛП2)'
 type: module
 core: 8.x
 package: SynapseF
