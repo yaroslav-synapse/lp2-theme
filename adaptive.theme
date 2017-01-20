@@ -1,0 +1,108 @@
+<?php
+
+/**
+ * @file
+ * Preprocess functions for adaptive.
+ */
+
+use Drupal\adaptive\NodeUsluga;
+use Drupal\adaptive\Company;
+use Drupal\adaptive\GetContactForm;
+use Drupal\adaptive\MenuFaiconsReplace;
+use Drupal\image\Entity\ImageStyle;
+
+/**
+ * Prepares variables for the html.html.twig template.
+ */
+function adaptive_preprocess_html(&$variables) {
+  $variables['attributes']['class'][] = !$variables['root_path'] ? 'front' : 'not-front';
+  if (is_object($node = \Drupal::request()->attributes->get('node'))) {
+    $variables['attributes']['class'][] = 'page-node-' . $node->nid->value;
+  }
+  if (!empty($variables['page']['sidebar'])) {
+    $variables['attributes']['class'][] = 'sidebar';
+  }
+}
+
+/**
+ * Alter suggestions_page.
+ */
+function adaptive_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if (is_object($node = \Drupal::request()->attributes->get('node'))) {
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType());
+    array_splice($suggestions, 1, 0, 'page__node__' . $node->getType() . '__' . $node->id());
+  }
+}
+
+/**
+ * Prepares variables for the page.html.twig template.
+ */
+function adaptive_preprocess_page(&$variables) {
+  $variables['lp'] = FALSE;
+  $variables['company'] = Company::info('#minimap');
+  // Сделать мого форм на странице: Set count, Use: {{ forms.callback1 }}.
+  // Hack contact_ajax.module line ~237:
+  // if (isset($_POST['element_id'])) {$element_id = $_POST['element_id'];} !
+  $variables['forms'] = GetContactForm::form('callback', $count = 2);
+  if (FALSE) {
+    // Так можно включить карту.
+    $variables['#attached']['library'][] = 'synapse/synapse.contact';
+    $variables['#attached']['drupalSettings']['synapse'] = $variables['company']['map'];
+  }
+  // На странице услуги контент кладём на всю ширину.
+  if (is_object($node = \Drupal::request()->attributes->get('node'))) {
+    if ($node->getType() === 'usluga') {
+      $variables['lp'] = TRUE;
+      $config = \Drupal::config('synapse.settings');
+      $theme = $config->get('theme');
+      $show_logo_names = $config->get('show_names_in_logo');
+      switch ($theme) {
+        case 0:
+          $theme = 'blue';
+          break;
+        case 1:
+          $theme = 'red';
+          break;
+        case 2:
+          $theme = 'green';
+          break;
+        default:
+          $theme = 'blue';
+          break;
+      }
+      $variables['theme'] = $theme;
+      $variables['show_logo_names'] = $show_logo_names;
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_node() for node.html.twig.
+ */
+function adaptive_preprocess_node(&$variables) {
+  $entity = $variables['node'];
+  $variables['usluga'] = NodeUsluga::prepare($entity);
+  if (is_object($node = \Drupal::request()->attributes->get('node'))) {
+    if ($node->getType() === 'usluga') {
+      $variables['form_order'] = GetContactForm::form('order', $count = 1);
+      // Получаем сущность файл
+      $img = $entity->field_image->entity;
+      // Полный путь (включая адрес сайта) со стилем "full"
+      $styled_image_url = ImageStyle::load('image_1920')->buildUrl($img->getFileUri());
+      // Относительный путь от корня
+      $variables['main_image_url'] = file_url_transform_relative($styled_image_url);
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_menu().
+ */
+function adaptive_preprocess_menu(&$variables) {
+  $menu_name = $variables['menu_name'];
+  if ($menu_name == 'main' || $menu_name == 'account') {
+    foreach ($variables['items'] as &$item) {
+      $item = MenuFaiconsReplace::replaceIcon($item);
+    }
+  }
+}

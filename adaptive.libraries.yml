@@ -1,0 +1,112 @@
+adaptive.theme:
+  css:
+    theme:
+      css/main.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+
+adaptive.lp2:
+  css:
+    theme:
+      css/lp2.css: {}
+  js:
+    js/lp2.js: {}
+  dependencies:
+    - core/jquery
+
+adaptive.base:
+  css:
+    theme:
+      css/base/article.css: {}
+      css/base/partner.css: {}
+      css/base/client.css: {}
+      css/base/otziv.css: {}
+      css/base/team.css: {}
+
+adaptive.bootstrap:
+  css:
+    layout:
+      bootstrap4/css/bootstrap.min.css: {}
+  js:
+    js/tether/dist/js/tether.min.js: {}
+    bootstrap4/js/bootstrap.min.js: {}
+
+adaptive.layout:
+  css:
+    layout:
+      css/style.css: {}
+      css/adaptive.css: {}
+      css/admin/tabs.css: {}
+      css/layout.css: {}
+      css/header.css: {}
+      css/footer.css: {}
+  js:
+    js/script.js: {}
+  dependencies:
+    - core/jquery
+
+adaptive.usluga:
+  css:
+    theme:
+      css/base/usluga.css: {}
+  dependencies:
+    - adaptive/adaptive.landing
+
+adaptive.landing:
+  js:
+    js/parallax.js/parallax.min.js: {}
+    js/jquery.scrollTo.min.js: {}
+    js/jquery.localScroll.min.js: {}
+    js/jquery.nav.js: {}
+    js/lp.js: {}
+  dependencies:
+    - core/jquery
+    - adaptive/adaptive.owl
+
+adaptive.owl:
+  css:
+    theme:
+      js/owl.carousel.2/owl.carousel.css: {}
+      js/owl.carousel.2/animate.css: {}
+  js:
+    js/owl.carousel.2/owl.carousel.min.js: {}
+
+adaptive.mini:
+  css:
+    theme:
+      mini/themes/blue.css: {}
+      mini/mini.css: {}
+  js:
+    js/parallax.js/parallax.min.js: {}
+    js/jquery.scrollTo.min.js: {}
+    js/jquery.localScroll.min.js: {}
+    js/jquery.nav.js: {}
+    mini/js/wow.min.js: {}
+    mini/mini.js: {}
+  dependencies:
+    - core/jquery
+
+adaptive.admin:
+  css:
+    theme:
+      css/admin/admin.css: {}
+  js:
+    js/admin.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.cookie
+    - core/jquery.ui.core
+    - core/jquery.ui.draggable
+
+adaptive.faicons:
+  remote: https://fortawesome.github.io/Font-Awesome/
+  version: 4.7.0
+  license:
+    name: MIT
+    url: https://fortawesome.github.io/Font-Awesome/license/
+    gpl-compatible: true
+  css:
+    theme:
+      https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css: { type: external, minified: true }
