@@ -1,0 +1,24 @@
+langcode: ru
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_usluga_blocks
+    - node.type.usluga
+id: node.usluga.field_usluga_blocks
+field_name: field_usluga_blocks
+entity_type: node
+bundle: usluga
+label: Блоки
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: ":star:\r\nПолный комплекс\r\nРазработка технической документации\r\nПроектирование\r\nВнедрение"
+  -
+    value: ":puzzle-piece:\r\nИндивидуальный подход\r\nБыстро\r\nНадёжно\r\nМодульно"
+  -
+    value: ":coffee:\r\nПочему работают с нами\r\nРабота \"под ключ\"\r\nАдекватные цены\r\nВысокое качество"
+default_value_callback: ''
+settings: {  }
+field_type: string_long

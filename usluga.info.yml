@@ -1,0 +1,14 @@
+name: Услуга
+description: 'Тип материала Услуга'
+type: module
+core: 8.x
+package: SynapseF
+dependencies:
+  - field
+  - file
+  - image
+  - menu_ui
+  - node
+  - text
+  - user
+  - views
