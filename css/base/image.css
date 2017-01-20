@@ -1,0 +1,28 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+
+
+
+/*** Images */
+/** Редактирование изображений */
+form.node-image-form {}
+form.node-image-form .image-preview {
+  float: left;
+  padding-right: 15px;
+}
+form.node-image-form .image-widget-data {
+  overflow: hidden;
+  padding-bottom: 2px;
+}
+
+form.node-image-form .image-widget-data .form-type-textfield{
+  margin-top: 0;
+}
+

@@ -1,0 +1,32 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+.view-team {
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+.view-team h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.view-team .node {
+  margin-bottom: 15px;
+}
+
+.view-team .node  h3 {
+  font-size: 1.3rem;
+  line-height: 1.3em;
+  height: 4rem;
+  overflow: hidden;
+  text-aligin: center;
+  padding-top: 0.5em;
+}

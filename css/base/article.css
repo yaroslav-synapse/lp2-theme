@@ -1,0 +1,50 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+/** Artice */
+.node__submitted {
+  margin-bottom: 1.25rem;
+  color: #999;
+  font-size: 0.9em;
+}
+
+.node .paragraph--type--citata {
+  background: #eee;
+  padding: 25px 15px;
+  font-size: 1.2rem;
+  text-align: right;
+  margin: 15px 0;
+}
+
+.node .field--name-field-p-line {
+  font-size: 1rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
+
+.node .field--name-field-p-image img {
+  width: 100%;
+  height: auto;
+  background: #ddd;
+  padding: 3px;
+  margin: 15px 0;
+}
+
+.page-node-5 .field--name-field-p-image {
+  float: left;
+  margin-right: 10px;
+}
+
+
+
+
+
+
+
+

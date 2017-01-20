@@ -1,0 +1,43 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+.view-otziv {
+  padding-top: 15px;
+  padding-bottom: 40px;
+}
+.view-otziv h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+.view-otziv img{
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+.view-otziv .field--name-field-image {
+  height: 200px;
+  vertical-align: middle;
+  line-height: 150px;
+  overflow: hidden;
+}
+
+.view-otziv .node__content{
+  font-size: 18px;
+  line-height: 1.3em;
+  height: 60px;
+  background: #eee;
+  padding: 8px 5px;
+
+}
+.view-otziv .node {
+  margin-bottom: 15px;
+}

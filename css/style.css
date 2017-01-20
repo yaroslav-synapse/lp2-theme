@@ -1,0 +1,132 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+
+/**
+ * FONTS
+ */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400i,300,300i,600,600i,700,700i);
+@import url(https://fonts.googleapis.com/css?family=Exo+2:400,400i,300,300i,600,600i,700,700i);
+body {
+  font-family: "Open Sans",Helvetica,Arial,sans-serif;
+  font-weight: 400;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Exo 2",Helvetica,Arial,sans-serif;
+  font-weight: 300;
+}
+b, strong{
+  font-weight: 600;
+}
+
+/**
+ * Main Styles
+ */
+html {
+  font-size: 16px;
+}
+body {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #373a3c;
+  background-color: #fff;
+}
+body.modal-open {
+  overflow: inherit;
+  padding-right: 0 !important;
+}
+a {
+  color: #0275d8;
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: underline;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+/** Headers */
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: .5rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+h1 {
+  font-size:2.1rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.75rem;
+}
+h4 {
+  font-size: 1.5rem;
+}
+
+/** Tables */
+table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+table th,
+table td {
+  padding: .75rem;
+  line-height: 1.5;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+table tbody tr:nth-of-type(odd) {
+  background-color: #f9f9f9;
+}
+table thead th {
+  vertical-align: bottom;
+  border-bottom: 2px solid #eceeef;
+}
+
+table tbody + tbody {
+  border-top: 2px solid #eceeef;
+}
+
+table table {
+  background-color: #fff;
+}
+blockquote {
+  padding: .5rem 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  border-left: .25rem solid #eceeef;
+}
+
+img.text-xs-right{
+  float: right;
+  margin-left: 20px;
+  margin-bottom: 15px;
+}
+img.text-xs-left{
+  float: left;
+  margin-right: 20px;
+  margin-bottom: 15px;
+}
+img.text-xs-center{
+  width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.ui-dialog-titlebar-close {
+  background: url(../images/icon-close.png) no-repeat 0 0 !important;
+  width: 15px !important;
+  height: 15px !important;
+}

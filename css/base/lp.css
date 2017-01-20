@@ -1,0 +1,145 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+
+#images {
+  padding-top: 60px;
+}
+
+
+/** Inner Form   */
+.front-form {
+  background: rgba(0,0,0,0.6);
+  color: #FFF;
+  padding: 20px 0 40px;
+}
+.front-form h2{
+  padding-top: 18px;
+  padding-bottom: 7px;
+  margin: 0;
+}
+.front-form hr {
+  background: #FFF;
+}
+.front-form p {
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 9px;
+}
+.front-form .form-block {
+  overflow: hidden;
+  padding-top: 8px;
+}
+.front-form .block h2,
+.front-form .block .webform-component--name,
+.front-form .block .webform-component--phone label{
+  display: none;
+}
+
+.front-form .webform-component--phone{
+  margin: 0;
+}
+.front-form .form-text {
+  background: rgba(0,0,0,0.65);
+  border: solid 2px #FFF;
+  color: #FFF;
+  width: 236px;
+  border-radius: 4px;
+  float: left;
+  width: 45%;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.front-form .form-actions {
+  margin: 0;
+  float: right;
+  width: 45%;
+}
+
+.front-form .form-submit {
+  font-size: 20px;
+  border-radius: 4px;
+  border: solid 1px #0188ca;
+  background: #0188ca;
+  padding: 4px 21px;
+  color: #FFF;
+  display: block;
+  margin: 0 auto 20px;
+  width: 100%;
+  float: none;
+}
+
+
+.front-form .field--name-field-form-phone label{
+  display: none;
+}
+
+@media (max-width: 500px){
+  .front-form .form-text,
+  .front-form .form-actions {
+    float: none;
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+.front-form  input::-webkit-input-placeholder {color:#fff;} 
+.front-form  input::-moz-placeholder {color:#fff;} 
+.front-form  input:-moz-placeholder {color:#fff;} 
+.front-form  input:-ms-input-placeholder {color:#fff;}
+
+
+
+/** Slider */
+#slider {
+  padding: 60px 0;
+}
+.node-slider-teaser img {
+  width: 100%;
+  height: auto;  
+}
+.node-slider {
+  position: relative;
+}
+.node-slider .sider-text {
+  position: absolute;
+  top: 50px;
+  left: 150px;
+  width: 80%;
+  text-align: left;
+  color: #FFF;
+  font-size: 1.8em;
+  text-shadow: 0 3px 3px rgba(0, 0, 0, .9);
+  z-index: 5;
+}
+/** OWL Gallery */
+.owl-next,
+.owl-prev {
+  position: absolute;
+  top: 20px;
+  height: 50px;
+  width: 50px;
+  background: rgba(255,255,255,0.3);
+  border: solid 3px rgba(255,255,255,0.7);
+  border-radius: 25px;
+  font-size: 35px;
+  line-height: 44px;
+  color: #FFF;
+  text-align: center;
+  font-family: Arial;    
+}
+.owl-next {
+  right: 15px;
+}
+
+.owl-prev {
+  left: 15px;
+}
+

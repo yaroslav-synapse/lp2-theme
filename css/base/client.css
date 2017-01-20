@@ -1,0 +1,53 @@
+/**
+Synapse - adaptive theme
+.col-xs- <544px Extra small
+.col-sm- ≥544px Small
+.col-md- ≥768px Medium
+.col-lg- ≥992px Large
+.col-xl- ≥1200px Extra large
+Gutter width	1.875rem / 30px (15px on each side of a column)
+*/
+.view-client {
+  padding-bottom: 40px;
+}
+.view-client h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+}
+.view-client img{
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  transition: filter 1s ease-in-out;
+  transition: -webkit-filter 1s ease-in-out;
+  transition: -moz-filter 1s ease-in-out;
+}
+.view-client .node:hover  img{
+  filter: grayscale(0%);
+  -webkit-filter: grayscale(0%);
+  -moz-filter: grayscale(0%);
+  -ms-filter: grayscale(0%);
+  -o-filter: grayscale(0%);
+  filter: grayscale(0%);
+}
+.view-client .field--name-field-image {
+  height: 150px;
+  vertical-align: middle;
+  line-height: 150px;
+  padding: 5px;
+}
+
+.view-client .node .title {
+  font-size: 16px;
+  line-height: 1.4em;
+  font-weight: bold;
+}
+
