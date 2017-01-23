@@ -88,8 +88,8 @@ function adaptive_preprocess_node(&$variables) {
       // Получаем сущность файл
       if (!$entity->field_image->isEmpty()) {
         $img = $entity->field_image->entity;
-        // Полный путь (включая адрес сайта) со стилем "full"
-        $styled_image_url = ImageStyle::load('image_1920')->buildUrl($img->getFileUri());
+        // Полный путь (включая адрес сайта)
+        $styled_image_url = ImageStyle::load('max_2600x2600')->buildUrl($img->getFileUri());
         // Относительный путь от корня
         $variables['main_image_url'] = file_url_transform_relative($styled_image_url);
       }
