@@ -43,7 +43,7 @@ function adaptive_preprocess_page(&$variables) {
   // Сделать мого форм на странице: Set count, Use: {{ forms.callback1 }}.
   // Hack contact_ajax.module line ~237:
   // if (isset($_POST['element_id'])) {$element_id = $_POST['element_id'];} !
-  $variables['forms'] = GetContactForm::form('callback', $count = 2);
+  // $variables['forms'] = GetContactForm::form('callback', $count = 2);
   if (FALSE) {
     // Так можно включить карту.
     $variables['#attached']['library'][] = 'synapse/synapse.contact';
