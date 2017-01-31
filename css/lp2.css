@@ -116,6 +116,9 @@ h6 {
     -moz-transition: .4s;
     -webkit-transition: .4s;
 }
+.logo--text .logo-text__name, .logo--text .logo-text__slogan {
+  left: 0;
+}
 #header-full nav {
     padding: 20px 0 0;
     transition: padding .4s;
@@ -153,6 +156,9 @@ h6 {
 .header-full--fixed .logo-text__name {
     left: 55px;
     top: 8px;
+}
+.header-full--fixed .logo--text .logo-text__name {
+  left: 0;
 }
 #header-full.header-full--fixed nav {
     padding-top: 7px;
@@ -238,7 +244,7 @@ button,
     -webkit-transition: background-color .8s;
 }
 #hero:hover::before {
-    background-color: rgba(0, 0, 0, .65);
+    background-color: rgba(0, 0, 0, .6);
 }
 .hero-inner {
     background-repeat: no-repeat;
