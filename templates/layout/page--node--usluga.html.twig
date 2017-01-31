@@ -44,8 +44,10 @@ Gutter width	1.875rem / 30px (15px on each side of a column)
         <div class="header-small__inner">
           <div class="container">
             <div class="logo logo-small pull-left">
-              <a href="/" title="Главная" rel="home" id="logo" class="logo">
-                {{ company.logo|raw }}
+              <a href="/" class="logo{% if company.logo['#uri'] == false %} logo--text{% endif %}">
+                {% if company.logo['#uri'] %}
+                  {{ company.logo|raw }}
+                {% endif %}
                 {% if show_logo_names %}
                   <span class="logo-text__name">
                     {{ company.name|raw }}
@@ -66,8 +68,10 @@ Gutter width	1.875rem / 30px (15px on each side of a column)
         <div class="container">
           <div class="row">
             <div class="col-xl-4 col-md-4">
-              <a href="/" class="logo">
-                {{ company.logo|raw }}
+              <a href="/" class="logo{% if company.logo['#uri'] == false %} logo--text{% endif %}">
+                {% if company.logo['#uri'] %}
+                  {{ company.logo|raw }}
+                {% endif %}
                 {% if show_logo_names %}
                   <span class="logo-text">
                     <span class="logo-text__name">
