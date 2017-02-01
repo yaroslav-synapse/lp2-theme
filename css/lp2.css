@@ -116,8 +116,9 @@ h6 {
     -moz-transition: .4s;
     -webkit-transition: .4s;
 }
-.logo--text .logo-text__name, .logo--text .logo-text__slogan {
-  left: 0;
+.logo--text .logo-text__name,
+.logo--text .logo-text__slogan {
+    left: 0;
 }
 #header-full nav {
     padding: 20px 0 0;
@@ -158,7 +159,7 @@ h6 {
     top: 8px;
 }
 .header-full--fixed .logo--text .logo-text__name {
-  left: 0;
+    left: 0;
 }
 #header-full.header-full--fixed nav {
     padding-top: 7px;
@@ -426,6 +427,10 @@ button,
     margin: 0 0 30px;
     font-weight: 300;
     line-height: 1.6;
+}
+.field--name-body img {
+    max-width: 100%;
+    height: auto;
 }
 .field--name-body .caption {
     display: block;
@@ -1297,6 +1302,7 @@ button,
     }
     .logo-text__name {
         left: 60px;
+        white-space: nowrap;
     }
     .hero-inner .contact-message-form {
         margin-top: 30px;
