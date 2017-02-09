@@ -276,6 +276,12 @@ button,
     line-height: 38px;
     font-weight: bold;
 }
+.hero-inner__description h1 {
+  display: block;
+  margin: 0;
+  padding: 0;
+  text-align: inherit;
+}
 .contact-message-form .form-item,
 .contact-message-form .form-actions {
     margin: 0 0 20px;
@@ -437,11 +443,13 @@ button,
     position: relative;
     margin: 0 0 30px 0;
 }
-.field--name-body .caption.align-left {
+.field--name-body .caption.align-left,
+.field--name-body img.align-left {
     margin: 5px 35px 20px 0;
     max-width: 405px;
 }
-.field--name-body .caption.align-right {
+.field--name-body .caption.align-right,
+.field--name-body img.align-right {
     margin: 5px 0 20px 35px;
     max-width: 405px;
 }
@@ -834,6 +842,9 @@ button,
     background-color: #fff;
     padding: 20px 20px 60px;
     background-position: center bottom+10px;
+}
+.clear {
+  clear: both;
 }
 
 /* Colors */
@@ -1370,6 +1381,15 @@ button,
     .small-menu__inner {
         max-height: calc(100vh - 61px);
         overflow: auto;
+    }
+    .field--name-body .caption.align-right,
+    .field--name-body img.align-right,
+    .field--name-body .caption.align-left,
+    .field--name-body img.align-left {
+        display: block;
+        max-width: 100%;
+        margin: 0 auto 20px;
+        float: none;
     }
 }
 @media (max-width: 544px) {
