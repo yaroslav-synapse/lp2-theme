@@ -84,7 +84,14 @@ function adaptive_preprocess_node(&$variables) {
   $variables['usluga'] = NodeUsluga::prepare($entity);
   if (is_object($node = \Drupal::request()->attributes->get('node'))) {
     if ($node->getType() === 'usluga') {
-      $variables['form_order'] = GetContactForm::form('order', $count = 1);
+      $form_entity = \Drupal::entityManager()
+        ->getStorage('contact_form')
+        ->load('order');
+      $message = \Drupal::entityManager()
+        ->getStorage('contact_message')
+        ->create(['contact_form' => $form_entity->id()]);
+      $form_order = \Drupal::service('entity.form_builder')->getForm($message);
+      $variables['form_order'] = $form_order;
       // Получаем сущность файл
       if (!$entity->field_image->isEmpty()) {
         $img = $entity->field_image->entity;
