@@ -31,12 +31,11 @@ h6 {
     height: 700px;
     max-height: 80vh;
 }
-.field--name-body .youtube-embed-wrapper {
-    margin: 30px 0;
-}
-.field--name-body .youtube-embed-wrapper iframe {
+.field--name-body iframe {
     width: 100%;
     max-height: 80vh;
+    margin: 30px 0;
+    height: 400px;
 }
 .big-title {
     text-align: center;
@@ -1495,8 +1494,9 @@ button,
     .field--name-body .youtube-embed-wrapper {
         margin: 15px 0;
     }
-    .field--name-body .youtube-embed-wrapper iframe {
-        max-height: 50vh;
+    .field--name-body iframe {
+        max-height: 40vh;
+        margin: 15px 0;
     }
     .field--name-field-attach {
         margin: 20px 0;
