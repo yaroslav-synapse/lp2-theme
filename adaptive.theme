@@ -53,27 +53,27 @@ function adaptive_preprocess_page(&$variables) {
   if (is_object($node = \Drupal::request()->attributes->get('node'))) {
     if ($node->getType() === 'usluga') {
       $variables['lp'] = TRUE;
-      $config = \Drupal::config('synapse.settings');
-      $theme = $config->get('theme');
-      $show_logo_names = $config->get('show_names_in_logo');
-      switch ($theme) {
-        case 0:
-          $theme = 'blue';
-          break;
-        case 1:
-          $theme = 'red';
-          break;
-        case 2:
-          $theme = 'green';
-          break;
-        default:
-          $theme = 'blue';
-          break;
-      }
-      $variables['theme'] = $theme;
-      $variables['show_logo_names'] = $show_logo_names;
     }
   }
+  $config = \Drupal::config('synapse.settings');
+  $theme = $config->get('theme');
+  $show_logo_names = $config->get('show_names_in_logo');
+  switch ($theme) {
+    case 0:
+      $theme = 'blue';
+      break;
+    case 1:
+      $theme = 'red';
+      break;
+    case 2:
+      $theme = 'green';
+      break;
+    default:
+      $theme = 'blue';
+      break;
+  }
+  $variables['theme'] = $theme;
+  $variables['show_logo_names'] = $show_logo_names;
 }
 
 /**
