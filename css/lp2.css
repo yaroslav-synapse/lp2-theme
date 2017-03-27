@@ -846,7 +846,20 @@ button,
 .clear {
   clear: both;
 }
-
+.btn--main:hover,
+.btn--main:focus {
+    color: #fff;
+    text-decoration: none;
+}
+.breadcrumb {
+    padding: 0;
+    margin: 0 0 20px;
+    color: #000;
+    background-color: transparent;
+}
+.breadcrumb a {
+    color: #000;
+}
 /* Colors */
 
 
