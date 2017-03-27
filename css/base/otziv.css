@@ -7,37 +7,118 @@ Synapse - adaptive theme
 .col-xl- ≥1200px Extra large
 Gutter width	1.875rem / 30px (15px on each side of a column)
 */
-.view-otziv {
-  padding-top: 15px;
-  padding-bottom: 40px;
-}
-.view-otziv h2 {
-  text-transform: uppercase;
-  font-size: 32px;
-  font-weight: bold;
-  text-align: center;
-}
-.view-otziv img{
-  width: 100%;
-  height: auto;
-  vertical-align: middle;
-}
 
-.view-otziv .field--name-field-image {
-  height: 200px;
-  vertical-align: middle;
-  line-height: 150px;
-  overflow: hidden;
+.more-reviews {
+    text-align: center;
+    padding: 20px 0 40px;
 }
-
-.view-otziv .node__content{
-  font-size: 18px;
-  line-height: 1.3em;
-  height: 60px;
-  background: #eee;
-  padding: 8px 5px;
-
+.review-teaser {
+    margin-bottom: 30px;
 }
-.view-otziv .node {
-  margin-bottom: 15px;
+.review-teaser-image {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+.review-teaser-image::before {
+    content: '\f06e';
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: 29px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    background-color: rgba(255, 255, 255, .7);
+    transform: scale(0.85);
+    -webkit-transform: scale(0.85);
+    -moz-transform: scale(0.85);
+    transition: .4s;
+    -webkit-transition: .4s;
+    -moz-transition: .4s;
+}
+.review-teaser-image:hover::before {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    visibility: visible;
+}
+.review-teaser-image img {
+    max-width: 100%;
+    height: auto;
+    max-height: 50vh;
+    object-fit: cover;
+    width: auto;
+}
+.review-teaser .field--name-field-otziv-fio {
+    margin: 0 0 10px;
+    font-weight: bold;
+    font-size: 25px;
+    line-height: 30px;
+}
+.review-teaser .field--name-field-short {
+    font-size: 17px;
+    margin: 0 0 10px;
+    font-weight: 300;
+    line-height: 1.5;
+    font-style: italic;
+}
+.review-teaser .field--name-field-short::before {
+    content: '« ';
+}
+.review-teaser .field--name-field-short::after {
+    content: ' »';
+}
+.review-teaser-image--empty {
+    display: block;
+    color: #9E9E9E;
+    text-decoration: none;
+    height: 200px;
+    background-color: #f8f8f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 29px;
+}
+.review-teaser-image--empty:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.review-full-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
+.review-full-image img {
+    max-width: 100%;
+    height: auto;
+}
+.review-full .field--name-field-otziv-fio {
+    margin: 0 0 15px;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 33px;
+}
+.review-full .field--type-string-long {
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.review-social-link {
+    display: inline-block;
+    vertical-align: middle;
+    color: #000;
+    text-decoration: none;
+    font-size: 25px;
+    margin-bottom: 15px;
 }
