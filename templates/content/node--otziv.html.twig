@@ -2,6 +2,7 @@
   set classes = [
     'node',
     'row',
+    'review-full',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -13,10 +14,17 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  <div class="col-md-6 img-adaptive">
-    {{ content.field_image }}
+  {% set content_class = 'col-md-8' %}
+  {% if content.field_image.0 %}
+  <div class="col-md-4">
+    <div class="review-full-image">
+      {{ content.field_image }}
+    </div>
   </div>
-  <div class="col-md-6">
+  {% else %}
+    {% set content_class = 'col-md-12' %}
+  {% endif %}
+  <div class="{{ content_class }}">
     {% if display_submitted %}
       <div{{ author_attributes.addClass('node__submitted') }}>
         {% set createdDate = node.getCreatedTime|date('j.m.Y') %}
