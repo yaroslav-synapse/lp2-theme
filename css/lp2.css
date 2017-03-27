@@ -870,6 +870,9 @@ button,
     background-color: #0099cc;
     color: #fff;
 }
+.lp-color-blue .review-teaser-image::before {
+    color: #0099cc;
+}
 .lp-color-blue .logo-text__name {
     color: #0099cc;
 }
@@ -992,6 +995,9 @@ button,
 .lp-color-red .big-title {
     background-color: #ff3333;
     color: #fff;
+}
+.lp-color-red .review-teaser-image::before {
+    color: #ff3333;
 }
 .lp-color-red .logo-text__name {
     color: #ff3333;
@@ -1128,6 +1134,9 @@ button,
 .lp-color-green .big-title {
     background-color: #239449;
     color: #fff;
+}
+.lp-color-green .review-teaser-image::before {
+    color: #239449;
 }
 .lp-color-green .logo-text__name {
     color: #239449;
