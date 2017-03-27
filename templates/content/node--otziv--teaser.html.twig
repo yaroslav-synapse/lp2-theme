@@ -1,6 +1,7 @@
 {%
   set classes = [
     'node',
+    'review-teaser',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
@@ -12,16 +13,26 @@
 <div{{ attributes.addClass(classes) }}>
 
   {{ title_prefix }}
-  <div class="img-adaptive">
-    {{ content.field_image }}
-  </div>
-  {#<h3 class="title text-xs-center">{{ label }}</h3>#}
   {{ title_suffix }}
-
-  <div{{ content_attributes.addClass('node__content') }}>
-    {{ content|without('field_image') }}
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="review-teaser-image">
+        {% if content.field_image.0 %}
+          {{ content.field_image }}
+          {% else %}
+          <a href="{{ url }}" class="review-teaser-image--empty"><i class="fa fa-picture-o" aria-hidden="true"></i></a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="col-lg-8">
+      <div{{ content_attributes.addClass('node__content') }}>
+        {{ content|without('field_image') }}
+      </div>
+      <a href="{{ url }}" class="btn btn--main">
+        Подробнее
+      </a>
+    </div>
   </div>
-
 </div>
 {#
 /**
