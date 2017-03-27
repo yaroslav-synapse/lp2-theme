@@ -44,33 +44,37 @@
         </div>
     </div>
 </section>
-<section id="services">
-    <div class="big-title">
-        Услуги
-    </div>
-    <div class="container">
-        <div id="main-content" class="row">
-            <div id="content-area" class="col-xs-12 col-lg-10 offset-lg-1">
-                <article{{ attributes.addClass('node-content-wrapper') }}>
-                    {{ title_prefix }}
-                    {{ title_suffix }}
-                    <div class="content">
-                        {{ content.body }}
-                        {{ content.field_attach }}
-                    </div>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
-<section id="gallery">
-    <div class="big-title">
-        Галерея
-    </div>
-    <div class="container">
-        {{ content.field_gallery }}
-    </div>
-</section>
+{% if content.body.0 or content.field_attach.0 %}
+  <section id="services">
+      <div class="big-title">
+          Услуги
+      </div>
+      <div class="container">
+          <div id="main-content" class="row">
+              <div id="content-area" class="col-xs-12 col-lg-10 offset-lg-1">
+                  <article{{ attributes.addClass('node-content-wrapper') }}>
+                      {{ title_prefix }}
+                      {{ title_suffix }}
+                      <div class="content">
+                          {{ content.body }}
+                          {{ content.field_attach }}
+                      </div>
+                  </article>
+              </div>
+          </div>
+      </div>
+  </section>
+{% endif %}
+{% if content.field_gallery.0 %}
+  <section id="gallery">
+      <div class="big-title">
+          Галерея
+      </div>
+      <div class="container">
+          {{ content.field_gallery }}
+      </div>
+  </section>
+{% endif %}
 <section id="line">
     <div class="line__inner">
         <div class="container">
