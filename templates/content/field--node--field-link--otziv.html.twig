@@ -1,0 +1,22 @@
+{%
+  set classes = [
+    'field',
+    'field--name-' ~ field_name|clean_class,
+    'field--type-' ~ field_type|clean_class,
+    'field--label-' ~ label_display,
+  ]
+%}
+{%
+  set title_classes = [
+    'field__label',
+    label_display == 'visually_hidden' ? 'visually-hidden',
+  ]
+%}
+
+{% for item in items %}
+  <div{{ item.attributes.addClass('field__item') }}>
+    <a href="{{ item.content['#url'].getUri() }}" class="review-social-link" target="_blank" rel="nofollow">
+      <i class="fa fa-external-link" aria-hidden="true"></i>
+    </a>
+  </div>
+{% endfor %}
