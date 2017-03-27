@@ -10,133 +10,180 @@ Gutter width	1.875rem / 30px (15px on each side of a column)
 {{ attach_library('adaptive/adaptive.layout') }}
 {{ attach_library('adaptive/adaptive.theme') }}
 {{ attach_library('adaptive/adaptive.base') }}
-
-<div class="page-wrapper">
-  <header id="header" class="" role="banner">
-    <section id="header-info" class='collapse'>
-      <div class="header-info__inner">
+{{ attach_library('adaptive/adaptive.lp2') }}
+<div class="lp lp-color-{{ theme }}">
+  <div class="page-wrapper">
+    <header id="header" class="custom-messages" role="banner">
+      <section id="header-info" class='collapse'>
+        <div class="header-info__inner">
+          <div class="container">
+            <div class="row">
+              <div class="offset-sm-3 col-sm-6">
+                {{ page.header }}
+                <div class="header-info-phones">
+                  {%
+                    set phones = company.phone|raw
+                  %}
+                  {%
+                    set phones_array = phones|split(',')
+                  %}
+                  {% for phone in phones_array %}
+                      {% if loop.last %}
+                        <div class="header-info-phones__item">{{ phone }}</div>
+                        {% else %}
+                        <div class="header-info-phones__item">{{ phone }},</div>
+                      {% endif %}
+                   {% endfor %}
+                </div>
+                {{ forms.callback2 }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="header-small" class="hidden-lg-up">
+        <div class="header-small__inner">
+          <div class="container">
+            <div class="logo logo-small pull-left">
+              <a href="/" class="logo{% if company.logo['#uri'] == false %} logo--text{% endif %}">
+                {% if company.logo['#uri'] %}
+                  {{ company.logo|raw }}
+                {% endif %}
+                {% if show_logo_names %}
+                  <span class="logo-text__name">
+                    {{ company.name|raw }}
+                  </span>
+                {% endif %}
+              </a>
+            </div>
+            {% include directory ~ '/templates/layout/nav-togglers.html' %}
+          </div>
+        </div>
+        <div id="small-menu" class="container collapse">
+          <div class="small-menu__inner">
+            {{ page.menu_small }}
+          </div>
+        </div>
+      </section>
+      <section id="header-full" class="hidden-md-down">
         <div class="container">
           <div class="row">
-            <div class="col-sm-6 ">
-              {{ page.header }}
+            <div class="col-xl-4 col-md-4">
+              <a href="/" class="logo{% if company.logo['#uri'] == false %} logo--text{% endif %}">
+                {% if company.logo['#uri'] %}
+                  {{ company.logo|raw }}
+                {% endif %}
+                {% if show_logo_names %}
+                  <span class="logo-text">
+                    <span class="logo-text__name">
+                      {{ company.name|raw }}
+                    </span>
+                    <span class="logo-text__slogan">
+                      {{ company.slogan|raw }}
+                    </span>
+                  </span>
+              {% endif %}
+              </a>
+            </div>
+            <div class="col-xl-4 col-md-5 text-md-center">
+              {{ page.menu_main }}
+            </div>
+            <div class="col-xl-4 col-md-3 text-md-right">
+              <div class="header-phone">
+                {% for phone in phones_array %}
+                    {% if loop.last %}
+                      <span class="header-phone__item">{{ phone }}</span>
+                      {% else %}
+                      <span class="header-phone__item">{{ phone }}</span>,
+                    {% endif %}
+                 {% endfor %}
+              </div>
+              <button href="#" type="button" class="btn btn--main" data-toggle="modal" data-target="#block-adaptive-form-callme">
+                Заказать звонок
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <section id="sys">
+      <div class="container">
+        <div class="row">
+          <div class="height-0 col-md-12">
+            {{ page.tabs }}
+            {{ page.messages }}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% if lp %}
+      {{ page.content }}
+    {% else %}
+    <section id="main">
+      {{ page.title }}
+      <div class="container">
+        {{ page.breadcrumb }}
+        <div class="row" id="main-content">
+          {% set main_class = 'col-md-12' %}
+          {% if page.sidebar|render %}
+             {% set main_class = 'col-md-8' %}
+             <div class="col-md-4" id="sidebar">
+               {{ page.sidebar }}
+             </div>
+          {% endif %}
+          <div class="{{ main_class }}" id="content-area">
+            {{ page.content }}
+          </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    {% if lp %}
+    <section id="contacts">
+      <div class="big-title">
+          Контакты
+      </div>
+      <div class="contacts__inner">
+        <div class="container">
+            <div class="col-lg-4 offset-lg-4 col-xs-12">
+                {{ company.contact|raw }}
+            </div>
+        </div>
+      </div>
+    </section>
+    {% endif %}
+    <footer class="footer{% if lp %} footer--services{% endif %}">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 col-md-4 text-md-left text-xs-center">
+            <div class="copy">
+              <a href="/user/login">©</a> {{ "now"|date("Y") }}.
+              Все права защищены.
+            </div>
+            {{ page.footer }}
+          </div>
+          <!--div class="col-sm-4"><a id="synapse-drupal"
+            href="http://synapse-studio.ru/drupal"
+            title="Сайт работает на CMS Drupal">Работает на <span>Drupal</span></a>
+          </div-->
+          <div class="col-lg-6 col-md-5 text-md-right text-xs-center">
+            <div class="synapse">
+                <div class="synapse-copy" title="Создание сайтов в Вологде">
+                    <img class="synapse-copy__logo" width="79px" height="24px" alt="Синапс" src="/themes/adaptive/images/synapse-footer-w.svg">
+                    —
+                    <a href="http://synapse-studio.ru/zakazat-sozdanie-saita" target="_blank" class="synapse-copy__link">Создание сайта</a>
+                </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="header-small" class="hidden-lg-up">
-      <div class="header-small__inner">
-        <div class="container">
-          <div class="logo logo-small pull-left">
-            <a href="/" title="Главная" rel="home" id="logo" class="logo">
-              <img src="/themes/adaptive/logo.svg" alt="Главная"></a>
-          </div>
-          {% include directory ~ '/templates/layout/nav-togglers.html' %}
-        </div>
-      </div>
-      <div id="small-menu" class="container collapse" >
-        <div class="small-menu__inner">
-          {{ page.menu_small }}
-        </div>
-      </div>
-    </section>
-    <section id="header-full" class="hidden-md-down">
-      <div class="container">
-        <div class="logo logo-full pull-left">
-          <img src="/themes/adaptive/logo.svg" alt="Главная"></a>
-        </div>
-        <span class="phone pull-right" href="/">
-          {{ company.phone|raw }}<br />
-          <button href="#" type="button" class="btn btn-sm btn-outline-primary"
-            data-toggle="modal" data-target="#block-adaptive-form-callme">Заказать звонок</button>
-        </span>
-        {{ page.menu_main }}
-      </div>
-    </section>
-  </header>
-
-  <section id="sys">
-    <div class="container">
-      <div class="row">
-        <div class="height-0 col-md-12">
-          {{ page.tabs }}
-          {{ page.messages }}
-        </div>
-      </div>
-    </div>
-  </section>
-  {% if lp %}
-    {{ page.content }}
-  {% else %}
-  <section id="main">
-    <div class="container">
-      <div class="row" id="main-content">
-        {% set main_class = 'col-md-12' %}
-        {% if page.sidebar|render %}
-           {% set main_class = 'col-md-8' %}
-           <div class="col-md-4" id="sidebar">
-             {{ page.sidebar }}
-           </div>
-        {% endif %}
-        <div class="{{ main_class }}" id="content-area">
-          {{ page.breadcrumb }}
-          {{ page.title }}
-          {{ page.content }}
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endif %}
-
-  {% if page.order|render %}
-  <section id="order" class="padding-bottom-70 padding-top-40 text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12 col-lg-6 col-md-6 offset-lg-3 offset-md-3">
-          <h2 class="text-center padding-bottom-30">Свяжитесь с нами</h2>
-          {{ company.contact|raw }}
-          <br><br>
-          <h4>Отправьте сообщение</h4>
-          {{ page.order }}
-        </div>
-      </div>
-    </div>
-  </section>
-  {% endif %}
-
-  <footer class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-2 col-md-3 text-md-left text-xs-center">
-          <div class="footer-logo">
-            <img src="/themes/adaptive/images/logo-footer.png" />
-          </div>
-        </div>
-        <div class="col-lg-6 col-md-4 text-md-left text-xs-center">
-          <span class="copy text-muted">
-          <a href="/user/login">©</a> {{ "now"|date("Y") }}.
-          "Ромашка". Все права защищены.</span>
-          {{ page.footer }}
-        </div>
-        <!--div class="col-sm-4"><a id="synapse-drupal"
-          href="http://synapse-studio.ru/drupal"
-          title="Сайт работает на CMS Drupal">Работает на <span>Drupal</span></a>
-        </div-->
-        <div class="col-lg-4 col-md-5 text-md-right text-xs-center">
-          <div class="synapse">
-          <a id="synapse-copy" href="http://synapse-studio.ru/zakazat-sozdanie-saita"
-            title="Создание сайтов в Вологде">
-            <img id="syn-logo" width="79px" height="24px" alt="Синапс"
-                 src="/themes/adaptive/images/synapse-footer.svg"
-            /> — <span>Создание сайта</span></a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
+  </div>
+  <div class="custom-messages">
+    {{ page.bottom }}
+  </div>
 </div>
-{{ page.bottom }}
-
 {#
 /**
  * @file
