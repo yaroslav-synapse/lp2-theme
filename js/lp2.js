@@ -12,6 +12,7 @@
         mobile_nav();
         mobile_promo();
         partners_slider();
+        clients_slider();
     });
 
     function fixed_nav() {
@@ -75,6 +76,27 @@
         var partners_block = $('.partners-slider');
         if (partners_block.length) {
             partners_block.owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 0
+                    },
+                    600: {
+                        items: 2
+                    },
+                }
+            })
+        }
+    }
+    function clients_slider() {
+        var clients_block = $('.clients-slider');
+        if (clients_block.length) {
+            clients_block.owlCarousel({
                 loop: true,
                 margin: 30,
                 nav: false,
