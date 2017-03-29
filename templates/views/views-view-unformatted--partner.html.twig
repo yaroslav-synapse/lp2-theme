@@ -15,16 +15,10 @@
  * @see template_preprocess_views_view_unformatted()
  */
 #}
-<div class="row">
+<div class="partners-slider owl-carousel">
 {% for row in rows %}
 
-  {%
-    set row_classes = [
-      default_row_class ? 'views-row',
-      'col-xs-4',
-    ]
-  %}
-  <div class="col-xs-2">
+  <div class="partners-slide">
     {{ row.content }}
   </div>
 
