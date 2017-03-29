@@ -11,9 +11,7 @@
         scroll_to();
         mobile_nav();
         mobile_promo();
-    });
-    $(window).on('load', function() {
-
+        partners_slider();
     });
 
     function fixed_nav() {
@@ -69,6 +67,28 @@
             var window_height = $(window).height() - $('.header-small__inner').outerHeight();
             $('.hero-inner').css({
                 'min-height': window_height
+            })
+        }
+    }
+
+    function partners_slider() {
+        var partners_block = $('.partners-slider');
+        if (partners_block.length) {
+            partners_block.owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: false,
+                autoplay: true,
+                autoplaySpeed: 1000,
+                responsive: {
+                    0: {
+                        items: 1,
+                        margin: 0
+                    },
+                    600: {
+                        items: 2
+                    },
+                }
             })
         }
     }
