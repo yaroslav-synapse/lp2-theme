@@ -135,6 +135,20 @@ h6 {
     -webkit-transition: .4s;
     padding-bottom: 32px;
 }
+.header-phone__item,
+.header-info-phones__item {
+    color: #333333;
+    text-decoration: none;
+    border-bottom: solid 1px #fff;
+}
+a.header-phone__item:hover,
+a.header-phone__item:focus,
+a.header-info-phones__item:hover,
+a.header-info-phones__item:focus {
+    color: #333;
+    border-color: #333;
+    text-decoration: none;
+}
 #header-full .col-md-4 {
     position: relative;
 }
@@ -1290,8 +1304,8 @@ button,
     .header-phone__item {
         display: none;
     }
-    .header-phone__item:first-child {
-        display: block;
+    .header-phone__item:last-child {
+        display: inline;
         font-size: 18px;
     }
     .hero-inner {
