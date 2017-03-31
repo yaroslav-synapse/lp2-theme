@@ -29,9 +29,9 @@ Gutter width	1.875rem / 30px (15px on each side of a column)
                   %}
                   {% for phone in phones_array %}
                       {% if loop.last %}
-                        <div class="header-info-phones__item">{{ phone }}</div>
+                        <a href="tel:{{ phone }}" class="header-info-phones__item">{{ phone }}</a>
                         {% else %}
-                        <div class="header-info-phones__item">{{ phone }},</div>
+                        <a href="tel:{{ phone }}" class="header-info-phones__item">{{ phone }},</a>
                       {% endif %}
                    {% endfor %}
                 </div>
@@ -92,9 +92,9 @@ Gutter width	1.875rem / 30px (15px on each side of a column)
               <div class="header-phone">
                 {% for phone in phones_array %}
                     {% if loop.last %}
-                      <span class="header-phone__item">{{ phone }}</span>
+                      <a href="tel:{{ phone }}" class="header-phone__item">{{ phone }}</a>
                       {% else %}
-                      <span class="header-phone__item">{{ phone }}</span>,
+                      <a href="tel:{{ phone }}" class="header-phone__item">{{ phone }}</span>,
                     {% endif %}
                  {% endfor %}
               </div>
