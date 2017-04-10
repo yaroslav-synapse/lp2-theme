@@ -24,6 +24,7 @@ adaptive.base:
       css/base/client.css: {}
       css/base/otziv.css: {}
       css/base/team.css: {}
+      css/base/portfolio.css: {}
 
 adaptive.bootstrap:
   css:
