@@ -1,8 +1,10 @@
 .portfolio-teaser {
-    margin-bottom: 30px;
+    max-width: 380px;
+    margin: 0 auto 30px;
 }
 .portfolio-teaser-image {
     margin-bottom: 15px;
+    text-align: center;
 }
 .portfolio-teaser-image a {
     display: block;
@@ -61,4 +63,18 @@
 }
 .portfolio-full .field--name-field-gallery {
     padding: 6px 0 10px;
+}
+.view-portfolio .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+@media (max-width: 992px) {
+    .view-portfolio .row {
+        justify-content: center;
+    }
+}
+@media (max-width: 767px) {
+    .view-portfolio .row {
+        display: block;
+    }
 }
