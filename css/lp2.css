@@ -875,6 +875,7 @@ button,
     color: #000;
 }
 
+
 /* Colors */
 
 
@@ -889,6 +890,10 @@ button,
 .lp-color-blue .partner-teaser-link::before,
 .lp-color-blue .client-teaser-link::before {
     color: #0099cc;
+}
+.lp-color-blue .portfolio-teaser-title-link {
+    color: #0099cc;
+    border-color: #0099cc;
 }
 .lp-color-blue .logo-text__name {
     color: #0099cc;
@@ -1017,6 +1022,10 @@ button,
 .lp-color-red .partner-teaser-link::before,
 .lp-color-red .client-teaser-link::before {
     color: #ff3333;
+}
+.lp-color-red .portfolio-teaser-title-link {
+    color: #ff3333;
+    border-color: #ff3333;
 }
 .lp-color-red .logo-text__name {
     color: #ff3333;
@@ -1158,6 +1167,10 @@ button,
 .lp-color-green .partner-teaser-link::before,
 .lp-color-green .client-teaser-link::before {
     color: #239449;
+}
+.lp-color-green .portfolio-teaser-title-link {
+    color: #239449;
+    border-color: #239449;
 }
 .lp-color-green .logo-text__name {
     color: #239449;
