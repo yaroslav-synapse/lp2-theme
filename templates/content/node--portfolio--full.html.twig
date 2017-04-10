@@ -1,0 +1,27 @@
+{%
+  set classes = [
+    'node',
+    'portfolio-full',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+  {{ title_prefix }}
+  {{ title_suffix }}
+
+  <div class="row">
+    <div class="col-lg-6 col-12">
+      {{ content.field_image }}
+      {{ content.field_gallery }}
+    </div>
+    <div class="col-lg-6 col-12">
+      {{ content.body }}
+    </div>
+  </div>
+</article>

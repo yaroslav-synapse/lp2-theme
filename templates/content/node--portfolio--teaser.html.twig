@@ -1,0 +1,31 @@
+{%
+  set classes = [
+    'node',
+    'portfolio-teaser',
+    'node--type-' ~ node.bundle|clean_class,
+    node.isPromoted() ? 'node--promoted',
+    node.isSticky() ? 'node--sticky',
+    not node.isPublished() ? 'node--unpublished',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
+  ]
+%}
+{{ attach_library('classy/node') }}
+<article{{ attributes.addClass(classes) }}>
+
+    {{ title_prefix }}
+    {{ title_suffix }}
+    <div class="portfolio-teaser-image">
+        {{ content.field_image }}
+    </div>
+    <div class="portfolio-teaser-body">
+      <div class="portfolio-teaser-title">
+          <a href="{{ url }}" class="portfolio-teaser-title-link">
+              {{ label }}
+          </a>
+      </div>
+      <div class="portfolio-teaser-introtext">
+          {{ content.field_short }}
+      </div>
+    </div>
+
+</article>
