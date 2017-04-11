@@ -1618,4 +1618,7 @@ button,
         max-height: calc(100vh - 52px);
         overflow: auto;
     }
+    #line .line-buttons a[href="/#hero"] {
+      display: none;
+    }
 }
